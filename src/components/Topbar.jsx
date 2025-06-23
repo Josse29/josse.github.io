@@ -6,7 +6,7 @@ const Topbar = ({ scrollToSection }) => {
   const handleScrollTo = (ref, name) => {
     if (ref?.current) {
       const offsetTop = ref.current.offsetTop - 80;
-      window.scrollTo({ top: offsetTop, behavior: "smooth" });
+      window.scrollTo({ top: offsetTop });
       setActive(name);
     }
   };
@@ -14,9 +14,9 @@ const Topbar = ({ scrollToSection }) => {
     const scrollY = window.scrollY;
     const positions = {
       Home: 0,
-      Education: scrollToSection.educationRef?.current?.offsetTop - 80 || 0,
-      Works: scrollToSection.worksRef?.current?.offsetTop - 80 || 0,
-      Projects: scrollToSection.projectsRef?.current?.offsetTop - 80 || 0,
+      Works: scrollToSection.worksRef?.current?.offsetTop - 90 || 0,
+      Projects: scrollToSection.projectsRef?.current?.offsetTop - 90 || 0,
+      Education: scrollToSection.educationRef?.current?.offsetTop - 90 || 0,
     };
     if (scrollY >= positions.Education) {
       setActive("Education");
