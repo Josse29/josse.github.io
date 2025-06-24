@@ -8,10 +8,10 @@
   scroll-behavior: smooth;
 }
 .leftToRight {
-  animation: leftToRight 1s ease-in-out;
+  animation: leftToRight 2s ease-in-out;
 }
 .rightToLeft {
-  animation: rightToLeft 1s ease-in-out;
+  animation: rightToLeft 3s ease-in-out;
 }
 .topToBtm {
   animation: topToBtm 1s ease-in-out;
