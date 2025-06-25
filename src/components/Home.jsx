@@ -130,14 +130,9 @@ const skills = [
     SkillImg: Vite,
   },
 ];
-const Home = ({ valueY }) => {
+const Home = () => {
   return (
-    <div
-      className="w-full flex-wrap pt-[110px] flex justify-center items-center min-h-screen gap-8 m-auto mb-5 p-7 lg:w-[1000px] xl:flex-nowrap"
-      // style={{
-      //   transform: `translateX(${valueY}px)`,
-      // }}
-    >
+    <div className="w-full flex-wrap pt-[110px] flex justify-center items-center min-h-screen gap-8 m-auto mb-5 p-7 lg:w-[1000px] xl:flex-nowrap">
       <div className="leftToRight">
         <div className="text-5xl mb-3 font-bold">I'm Josse Surya Pinem</div>
         <div className="text-4xl mb-3 text-teal-600 font-bold tracking-wider">

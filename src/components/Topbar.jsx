@@ -1,46 +1,36 @@
 import React, { useEffect, useState } from "react";
 import { JosseIcon } from "../assets";
 
-const Topbar = ({ scrollToSection }) => {
+const Topbar = ({ scrollToSection, inViewStatus }) => {
   const [active, setActive] = useState("Home");
   const handleScrollTo = (ref, name) => {
     if (ref?.current) {
-      const offsetTop = ref.current.offsetTop - 85;
-      window.scrollTo({ top: offsetTop });
+      const offsetTop = ref.current.offsetTop - 93;
+      window.scrollTo({ top: offsetTop, behavior: "smooth" });
       setActive(name);
     }
   };
-  const handleScroll = () => {
-    const scrollY = window.scrollY;
-    const positions = {
-      Home: 0,
-      Works: scrollToSection.worksRef?.current?.offsetTop - 85 || 0,
-      Projects: scrollToSection.projectsRef?.current?.offsetTop - 85 || 0,
-      Education: scrollToSection.educationRef?.current?.offsetTop - 85 || 0,
-    };
-    if (scrollY >= positions.Education) {
+  useEffect(() => {
+    if (inViewStatus.educationInView) {
       setActive("Education");
-    } else if (scrollY >= positions.Works) {
+    } else if (inViewStatus.worksInView) {
       setActive("Works");
-    } else if (scrollY >= positions.Projects) {
+    } else if (inViewStatus.projectsInView) {
       setActive("Projects");
-    } else {
+    } else if (inViewStatus.homeInView) {
       setActive("Home");
     }
-  };
-  useEffect(() => {
-    // console.log(window.innerWidth);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [scrollToSection]);
+  }, [inViewStatus]);
+
   const menuItems = [
-    { name: "Home", ref: null },
+    { name: "Home", ref: scrollToSection.homeRef },
     { name: "Projects", ref: scrollToSection.projectsRef },
     { name: "Works", ref: scrollToSection.worksRef },
     { name: "Education", ref: scrollToSection.educationRef },
   ];
+
   return (
-    <div className="fixed top-0 right-0 left-0 shadow-md bg-white z-10 topToBtm">
+    <div className="fixed top-0 right-0 left-0 shadow-md bg-white z-10 py-2 lg:py-0 topToBtm">
       <div className="w-full h-[80px] flex flex-col lg:flex-row items-center justify-between lg:w-[1000px] m-auto overflow-x-auto">
         <div className="flex items-center gap-5">
           <img src={JosseIcon} alt="Josse Icon" className="h-10 w-10" />
@@ -55,13 +45,7 @@ const Topbar = ({ scrollToSection }) => {
                   ? "text-xl text-teal-500 font-bold"
                   : "text-lg"
               }`}
-              onClick={() => {
-                if (item.name === "Home") {
-                  window.scrollTo({ top: 0 });
-                } else {
-                  handleScrollTo(item.ref, item.name);
-                }
-              }}
+              onClick={() => handleScrollTo(item.ref, item.name)}
             >
               {item.name}
             </div>

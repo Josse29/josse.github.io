@@ -14,7 +14,7 @@
   animation: rightToLeft 3s ease-in-out;
 }
 .topToBtm {
-  animation: topToBtm 1s ease-in-out;
+  animation: topToBtm 1.5s ease-in-out;
 }
 @keyframes leftToRight {
   from {

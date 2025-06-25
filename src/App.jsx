@@ -1,23 +1,12 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Education, Home, Project, Topbar, Works } from "./components";
 import useInViewObserver from "./hooks/useInObserver";
 
 function App() {
-  const [valueY, setValueY] = useState(0);
   const [homeRef, homeInView] = useInViewObserver();
   const [projectsRef, projectsInView] = useInViewObserver();
   const [worksRef, worksInView] = useInViewObserver();
   const [educationRef, educationInView] = useInViewObserver();
-  useEffect(() => {
-    const handleScroll = () => {
-      setValueY(window.scrollY);
-    };
-    window.addEventListener("scroll", handleScroll);
-    // Clean-up
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
   return (
     <div className="overflow-x-hidden">
       <Topbar
@@ -27,8 +16,16 @@ function App() {
           worksRef,
           educationRef,
         }}
+        inViewStatus={{
+          homeInView,
+          projectsInView,
+          worksInView,
+          educationInView,
+        }}
       />
-      <Home valueY={valueY} />
+      <div ref={homeRef}>
+        <Home />
+      </div>
       <div ref={projectsRef}>
         <Project inView={projectsInView} />
       </div>

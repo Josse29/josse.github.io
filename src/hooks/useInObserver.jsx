@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 
-const useInViewObserver = (threshold = 0.1) => {
+const useInViewObserver = (threshold = 0.3) => {
   const ref = useRef(null);
   const [inView, setInView] = useState(false);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => setInView(entry.isIntersecting),
