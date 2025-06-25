@@ -26,12 +26,12 @@ const data = [
 const Education = ({ inView }) => {
   return (
     <div
-      className={`mb-6 w-[1024px] m-auto min-h-screen transition-all duration-700 ease-in-out transform
+      className={`w-full mb-6 m-auto min-h-screen transition-all duration-700 ease-in-out transform
     ${
       inView
         ? "scale-100 translate-x-0 opacity-100"
         : "scale-0 -translate-x-full opacity-0"
-    } p-5 sectionFourth`}
+    } p-5 lg:w-[1000px]`}
     >
       <div className="flex justify-center mb-5">
         <div className="inline-block border-b-8 border-b-teal-500 pb-4 my-5">
@@ -46,7 +46,7 @@ const Education = ({ inView }) => {
       {/* list  */}
       {data.map((el) => (
         <div className="flex" key={el.EducateId}>
-          <div className="w-[150px] border-r-[5px] border-teal-500 first">
+          <div className="border-r-[5px] border-teal-500 w-[30%] lg:w-[150px]">
             <div className="relative">
               <div className="font-bold text-lg text-teal-600 me-3">
                 {el.EducateYear}
@@ -54,7 +54,7 @@ const Education = ({ inView }) => {
               <div className="bg-teal-600 w-[14px] h-[14px] rounded-full absolute right-[-10px] top-0"></div>
             </div>
           </div>
-          <div className="pb-3 flex-1 second">
+          <div className="pb-3 flex-1">
             <div className="ps-4 mb-1 font-bold text-teal-700 text-xl tracking-wider">
               {el.EducateName}
             </div>

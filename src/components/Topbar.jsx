@@ -5,7 +5,7 @@ const Topbar = ({ scrollToSection }) => {
   const [active, setActive] = useState("Home");
   const handleScrollTo = (ref, name) => {
     if (ref?.current) {
-      const offsetTop = ref.current.offsetTop - 80;
+      const offsetTop = ref.current.offsetTop - 85;
       window.scrollTo({ top: offsetTop });
       setActive(name);
     }
@@ -14,9 +14,9 @@ const Topbar = ({ scrollToSection }) => {
     const scrollY = window.scrollY;
     const positions = {
       Home: 0,
-      Works: scrollToSection.worksRef?.current?.offsetTop - 90 || 0,
-      Projects: scrollToSection.projectsRef?.current?.offsetTop - 90 || 0,
-      Education: scrollToSection.educationRef?.current?.offsetTop - 90 || 0,
+      Works: scrollToSection.worksRef?.current?.offsetTop - 85 || 0,
+      Projects: scrollToSection.projectsRef?.current?.offsetTop - 85 || 0,
+      Education: scrollToSection.educationRef?.current?.offsetTop - 85 || 0,
     };
     if (scrollY >= positions.Education) {
       setActive("Education");
@@ -41,12 +41,12 @@ const Topbar = ({ scrollToSection }) => {
   ];
   return (
     <div className="fixed top-0 right-0 left-0 shadow-md bg-white z-10 topToBtm">
-      <div className="h-[80px] flex items-center justify-between w-[1024px] m-auto sectionTop">
-        <div className="flex items-center gap-5 first">
+      <div className="w-full h-[80px] flex flex-col lg:flex-row items-center justify-between lg:w-[1000px] m-auto overflow-x-auto">
+        <div className="flex items-center gap-5">
           <img src={JosseIcon} alt="Josse Icon" className="h-10 w-10" />
           <div className="text-2xl font-bold tracking-wider">Josse</div>
         </div>
-        <div className="flex items-center gap-5 second">
+        <div className="flex items-center gap-5">
           {menuItems.map((item) => (
             <div
               key={item.name}

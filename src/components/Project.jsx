@@ -40,12 +40,12 @@ const Project = ({ inView }) => {
   const [hovered, setHovered] = useState(null);
   return (
     <div
-      className={`mb-6 w-[1024px] m-auto min-h-screen transition-all duration-700 ease-in-out
+      className={`mb-6 w-full m-auto min-h-screen transition-all duration-700 ease-in-out
     ${
       inView
         ? "scale-100 translate-x-0 opacity-100"
         : "scale-0 -translate-x-full opacity-0"
-    } p-5 sectionSecond`}
+    } p-5 lg:w-[1000px]`}
     >
       <div className="text-center">
         <div className="inline-block text-5xl font-bold tracking-wider text-center border-b-8 border-b-teal-500 pb-4 text-teal-600">
@@ -55,7 +55,7 @@ const Project = ({ inView }) => {
       <div className="text-center my-3">
         // These are my projects using mostly JavaScript //
       </div>
-      <div className="grid grid-cols-2 gap-5 third">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {data.map((el) => (
           <div
             key={el.ProjectId}

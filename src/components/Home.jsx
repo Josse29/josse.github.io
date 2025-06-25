@@ -133,7 +133,7 @@ const skills = [
 const Home = ({ valueY }) => {
   return (
     <div
-      className="pt-[110px] flex justify-center items-center min-h-screen gap-8 m-auto mb-5 p-7 w-[1024px] sectionFirst"
+      className="w-full flex-wrap pt-[110px] flex justify-center items-center min-h-screen gap-8 m-auto mb-5 p-7 lg:w-[1000px] xl:flex-nowrap"
       // style={{
       //   transform: `translateX(${valueY}px)`,
       // }}
@@ -209,7 +209,7 @@ const Home = ({ valueY }) => {
         </div>
       </div>
       <div className="rightToLeft">
-        <img src={Josse} alt="" className="" />
+        <img src={Josse} alt="" className="w-[50%] m-auto xl:w-auto" />
       </div>
     </div>
   );
