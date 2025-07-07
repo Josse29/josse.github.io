@@ -203,7 +203,11 @@ const Home = () => {
           </span>
         </div>
       </div>
-      <img src={Josse} alt="" className="w-1/2 lg:w-[460px] lg:h-[460px]" />
+      <img
+        src={Josse}
+        alt=""
+        className="w-[80%] md:w-[50%] lg:w-[460px] lg:h-[460px]"
+      />
     </div>
   );
 };

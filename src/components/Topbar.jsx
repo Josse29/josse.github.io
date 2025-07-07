@@ -36,7 +36,7 @@ const Topbar = ({ scrollToSection, inViewStatus }) => {
           <img
             src={JosseIcon}
             alt="Josse Icon"
-            className="h-[52px] w-[52px] rounded-full"
+            className="h-[41px] w-[41px] rounded-full"
           />
           <div className="text-2xl font-bold tracking-wider">Josse</div>
         </div>
