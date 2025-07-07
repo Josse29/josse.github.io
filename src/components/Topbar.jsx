@@ -33,7 +33,11 @@ const Topbar = ({ scrollToSection, inViewStatus }) => {
     <div className="fixed top-0 right-0 left-0 shadow-md bg-white z-10 py-2 lg:py-0 topToBtm">
       <div className="w-full h-[80px] flex flex-col lg:flex-row items-center justify-between lg:w-[1000px] m-auto overflow-x-auto">
         <div className="flex items-center gap-5">
-          <img src={JosseIcon} alt="Josse Icon" className="h-10 w-10" />
+          <img
+            src={JosseIcon}
+            alt="Josse Icon"
+            className="h-[52px] w-[52px] rounded-full"
+          />
           <div className="text-2xl font-bold tracking-wider">Josse</div>
         </div>
         <div className="flex items-center gap-5">

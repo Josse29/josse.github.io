@@ -1,5 +1,5 @@
 import Josse from "./img/josse.jpg";
-import JosseIcon from "./img/josse.png";
+import JosseIcon from "./img/josse2.jpg";
 import HTML from "./img/skills/html.png";
 import CSS from "./img/skills/css.png";
 import Expo from "./img/skills/expo.svg";

@@ -132,8 +132,8 @@ const skills = [
 ];
 const Home = () => {
   return (
-    <div className="w-full flex-wrap pt-[110px] flex justify-center items-center min-h-screen gap-8 m-auto mb-5 p-7 lg:w-[1000px] xl:flex-nowrap">
-      <div className="leftToRight">
+    <div className="w-full flex-wrap pt-[120px] flex justify-center min-h-screen gap-8 m-auto mb-5 p-7 lg:w-[1000px] xl:flex-nowrap rightToLeft">
+      <div>
         <div className="text-5xl mb-3 font-bold">I'm Josse Surya Pinem</div>
         <div className="text-4xl mb-3 text-teal-600 font-bold tracking-wider">
           I'm <TypedText />
@@ -203,9 +203,7 @@ const Home = () => {
           </span>
         </div>
       </div>
-      <div className="rightToLeft">
-        <img src={Josse} alt="" className="w-[50%] m-auto xl:w-auto" />
-      </div>
+      <img src={Josse} alt="" className="w-1/2 lg:w-[460px] lg:h-[460px]" />
     </div>
   );
 };
