@@ -12,7 +12,7 @@ const data = [
     ProjectName: "Accounting",
     ProjectImg: Accounting,
     ProjectDesc:
-      "A desktop application for managing company accounting. It automatically generates financial statements, including the statement of financial position, profit and loss, and changes in equity. Built with Electron, React Router, Tailwind CSS, SQLite3, and a modern UI/UX.",
+      "A desktop apzplication for managing company accounting. It automatically generates financial statements, including the statement of financial position, profit and loss, and changes in equity. Built with Electron, React Router, Tailwind CSS, SQLite3, and a modern UI/UX.",
   },
   {
     ProjectId: 2,
